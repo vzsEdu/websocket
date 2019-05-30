@@ -22,6 +22,7 @@ public class MyStompSessionHandler implements StompSessionHandler {
     private HelloMessage getSampleMessage() {
         HelloMessage helloMessage = new HelloMessage();
         helloMessage.setName("Hello Socket");
+        helloMessage.setId(123L);
         return helloMessage;
     }
 
