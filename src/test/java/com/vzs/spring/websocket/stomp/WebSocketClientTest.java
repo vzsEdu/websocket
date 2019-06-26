@@ -25,6 +25,11 @@ public class WebSocketClientTest {
     private static final String URL = "ws://localhost:20001/gs-guide-websocket";
     @Test
     public void testSendMessage() throws InterruptedException, ExecutionException {
+        startWebSocketClient();
+        new Scanner(System.in).nextLine(); // Don't close immediately.
+    }
+
+    public void startWebSocketClient() {
         ThreadPoolTaskScheduler te = new ThreadPoolTaskScheduler();
         te.setPoolSize(1);
         te.setThreadNamePrefix("wss-heartbeat-thread-");
@@ -43,8 +48,6 @@ public class WebSocketClientTest {
 //            connect.get().send("/app/hello", getSampleMessage());
 //
 //        }
-
-        new Scanner(System.in).nextLine(); // Don't close immediately.
     }
 
 

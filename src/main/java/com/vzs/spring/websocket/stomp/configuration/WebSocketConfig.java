@@ -35,7 +35,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
             @Override
             public Message<?> preSend(Message<?> message, MessageChannel channel) {
                 StompHeaderAccessor headerAccessor = StompHeaderAccessor.wrap(message);
-                log.info("what the presend {} " , headerAccessor.getSessionId());
+                log.info("ChannelInterceptor {} " , headerAccessor.getSessionId());
                 return message;
             }
         });
